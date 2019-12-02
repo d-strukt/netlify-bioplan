@@ -1,0 +1,15 @@
+.tng-Category-pageNum {
+  color: var(--color-blue-33);
+  font-size: 1.125em;
+  margin-bottom: 20px;
+  text-align: center;
+  word-spacing: 5px;
+}
+
+.tng-Category-title {
+  color: var(--color-green-28);
+  font-size: 32px;
+  letter-spacing: 2px;
+  margin: 0px 0 20px;
+  text-align: center;
+}

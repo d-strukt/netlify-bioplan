@@ -1,0 +1,23 @@
+.tng-MenuWrapper {
+  padding-bottom: 45px;
+}
+
+.tng-MenuWrapper-neighbor {
+  transition: transform 250ms;
+}
+
+.tng-MenuWrapper-neighbor.is-shifted {
+  transform: translate3d(calc(63px - 100vw), 0, 0);
+}
+
+@media (min-width: 781px) {
+  /* make space for the desktop navigation bar */
+  .tng-MenuWrapper {
+    padding-top: 70px;
+  }
+
+  /* ...unless we are not showing the desktop navigation bar*/
+  .tng-MenuWrapper--mobileOnly {
+    padding-top: 40px;
+  }
+}

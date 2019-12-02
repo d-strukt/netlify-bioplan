@@ -1,0 +1,26 @@
+.tng-ArticleContent-category {
+  color: var(--color-green-28);
+  line-height: 1.5;
+  text-decoration: none;
+}
+
+.tng-ArticleContent-publishDate {
+  font-size: 0.75em;
+  line-height: 1.25;
+}
+
+.tng-ArticleContent-text {
+  color: var(--color-gray-13);
+  line-height: 1.4;
+  margin: 40px 15px 0 15px;
+  word-spacing: 0.1em;
+}
+
+@media (min-width: 781px) {
+  /* adjust text to an increased font size */
+  .tng-ArticleContent-text {
+    color: var(--color-gray-20);
+    line-height: 1.6;
+    word-spacing: 0;
+  }
+}

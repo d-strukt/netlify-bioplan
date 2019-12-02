@@ -1,89 +1,114 @@
-# Introduction
+# The Next Groove
 
-Netlify StatusKit is a template to deploy your own Status pages on Netlify.
+[The Next Groove](https://github.com/facebook/create-react-app#readme) is an online music blog about beat-driven music. The blog content is written by Patrick Cardenas Mendez ([pat_cardenas@hotmail.com](mailto:pat_cardenas@hotmail.com)) and the website has been developed by Erick Cardenas Mendez ([LinkedIn](https://www.linkedin.com/in/erickcm/), [GitHub](https://github.com/travellingprog)).
 
-[![Netlify StatusKit Demo](http://statuskit.netlify.com/statuskit.png)](https://statuskit.netlify.com/)
+This repository contains all the code and the content of the website, including the administrative portal. The tools used to create this website include:
 
-Netlify StatusKit is released under the [MIT License](LICENSE).
-Please make sure you understand its [implications and guarantees](https://writing.kemitchell.com/2016/09/21/MIT-License-Line-by-Line.html).
+- React (front-end framework)
+- [Create React App](https://github.com/facebook/create-react-app) (build tool)
+- [NetlifyCMS](https://www.netlifycms.org/) (extendable content management system that stores content in the repo)
+- [Yarn](https://yarnpkg.com/) (dependency management)
+- [Standard](https://standardjs.com/) (code linter)
 
+In its present state, this application can **only** be deployed on Netlify, because it uses the Netlify Identity as an authentication service for the admin portal.
+
+
+## License
+
+**Not all files in this repository are covered by an open-source license**. In general, all the code and the CSS files are covered by an MIT license which is located at the root folder. On the other hand, pretty much all images and article text are provided with no license, and the authors retain their exclusive copyright over this content.
+
+Files named LICENSE or NOLICENSE have been placed within some folders to indicate that their content (files and subfolders) is not covered by the MIT license found in the root folder.
+
+One of the main reasons that this repository has been made public is to serve as a portfolio piece for the developer. However, the developer also hopes that this will serve as a good example to other developers, and wishes to contribute to the open-source community, even in a limited capacity.
+
+
+## Installation
+
+### Fork And Setup On Netlify
+
+You should fork this repo and deploy the fork on Netlify, even if you're just going to be playing around with this application locally, because it's a requirement to log into the CMS portion of the application.
+
+1. Fork and deploy with this button <!-- Markdown snippet -->
 [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/netlify/netlify-statuskit)
+2. Enable Netlify's [Git Gateway](https://www.netlify.com/docs/git-gateway/)
+3. [Add users](https://www.netlify.com/docs/identity/#adding-users) for Netlify Identity
 
-## Project Status
+### Local Pre-Requirements
 
-This project is no longer being maintained by netlify staff. This is a community led project and if you are looking to support this project, please get in touch via an issue.
+You need to install the following on your system before running this project locally.
 
-### Netlify's Statement
+- Node (see version in `.nvmrc`)
+- Yarn (see version in `.yvmrc`)
 
-> [Netlify] doesn't currently have the staff to process such contributions.
+It's recommended to set up Node using [nvm (Node Version Manager)](https://github.com/creationix/nvm). If nvm is present, you can install the correct Node version with a single command:
 
-## Initial configuration
-
-Click in the Deploy to Netlify button above to create your own site directly and push this repository to your own account.
-Before creating the site, Netlify will ask you to fill required environment variables listed here:
-
-- `STATUSKIT_PAGE_TITLE` - Title to show in the browser for your status site.
-- `STATUSKIT_COMPANY_LOGO` - URL to your company's logo.
-- `STATUSKIT_SUPPORT_CONTACT_LINK` - URL to a support page for your users to talk with you.
-- `STATUSKIT_RESOURCES_LINK` - URL to documentation for your users.
-
-## Extra configuration
-
-After the site is created, you can modify the code as much as you want and push it to your GitHub repository. Netlify will pick up changes from there.
-
-### Reporting systems
-
-You can add systems you want to report about to your Status page. For instance, you might want to tell your users about a status change in your CDN infrastructure but not in your API.
-
-Go to `site/config.toml` and change the global `systems` variables. Once that's done, you'll be able to change the status of each one of those systems individually when you open or modify an incident.
-
-### Full customization
-
-This template is based in [Netlify's Victor-Hugo](https://github.com/netlify/victor-hugo) boilerplate.
-To work on it you'll need NPM installed. To download dependencies type `npm run dependencies`, that will check if you have Hugo installed and will download it for you if you don't. It will also run `npm install` for the first time to download extra dependencies. After that, you can run `npm install` every time you want to install packages.
-
-## Managing incidents
-
-Incidents are plain markdown files inside the `site/content/incidents` directory.
-
-### Creating new incidents
-
-Adding incidents to your status page is as simple as adding a new document to the incidents collection.
-Create a new incident using npm:
-
-```
-npm run new-incident
+```sh
+nvm use
 ```
 
-You'll be asked a series of questions about the incident, then Hugo will generate a new file pre-filled with your responses.
+It's also recommended to set up Yarn using [yvm (Yarn Version Manager)](https://github.com/tophat/yvm). If yvm is present, you can install the correct Yarn version with a single command:
 
-After explaining the current situation in the incident, you can just push the file to GitHub. Netlify will deploy the indicent announcement for you in a matter of seconds.
-
-### Resolving incidents
-
-Everything will be operational again when all incidents are marked with `resolved = true` in the incident frontMatter:
-
-```toml
-+++
-...
-affectedsystems = ["API"]
-resolved = true
-+++
+```sh
+yvm use
 ```
 
+Once you have the correct version of Node and Yarn, you can install all the NPM package dependencies with
 
-### Tracking activity
-
-When there is an update in your incident you can track activity by inserting a timestamp with the update. For example:
-
-```md
-**Update**: We've identified the issue. {{< track "2016-11-22T14:34:00.000Z" >}}
+```sh
+yarn
 ```
 
+### Run The Site In Development Mode
 
-# Development
+The site is simply a front-end React application built using Create React App, except for the CMS (content management system). So, you can start it locally in dev mode by simply running the following command in terminal.
 
-Netlify StatusKit uses NPM to manage dependencies. It also bundles a version of Hugo to work out of the box.
+```
+yarn start
+```
 
-1. Use `npm install` to download dependencies.
-2. Use `npm start` to start the development server.
+That should launch the site at **[http://localhost:3001/](http://localhost:3001/)**. The content will not match the production site, because it originates from a different folder (`./public/cms-dev-content`).
+
+### Run the CMS Locally
+
+To use the CMS portion of the site, even locally, you need to deploy a fork of this application to Netlify. This is because the CMS portal uses Netlify's Git Gateway to authenticate users, even in development mode. Another consequence of Git Gateway is that the CMS portion of this application cannot be run offline.
+
+See above for instructions on connecting the site with Netlify. Once you have set up, you'll be able to access the admin portal at **[http://localhost:3001/admin](http://localhost:3001/)**. The authentication UI is handled by the [Identity widget](https://github.com/netlify/netlify-identity-widget), so the first time you attempt use the admin, you'll be prompted to enter the URL of your Netlify site.
+
+
+## Creating Development-Only Content With The CMS
+
+1) Your fork of this repo will include a remote branch named **dev-content**. DO NOT DELETE THIS BRANCH. It's the destination branch for content created in "development" mode.
+
+2) Create new content (e.g. a new article) with the CMS running locally.
+
+For terminal environments that support Bash shell (MacOS, Linux, Windows Subsystem For Linux, etc.):
+
+3) Make the bash script file **updateDevContent.sh** executable by running `chmod +x scripts/updateDevContent.sh`. You only need to do this once, and can skip this step on subsequent uses.
+
+4) Run `yarn update-dev`.
+
+For other terminal environments:
+
+3) Run `git fetch origin dev-content`
+
+4) Run `git checkout origin/dev-content -- public/cms-dev-content`
+
+5) Run `yarn update-dev:generated`
+
+The end result should be that you now have at least one new file inside the folder **public/cms-dev-content**.
+
+At some point in the future, I'll explain why I've settled on this matter of using the CMS locally for development purposes. However, you might be able to piece it together by understanding that a) NetlifyCMS works by saving content to a *remote* git branch, b) we want to be able to create content locally without it showing up on the production site and c) looking at the admin config in **src/myPages/admin/config.js**.
+
+
+## CMS Content vs "Generated" Content
+
+This application has two types of content JSON files:
+
+- JSON files describing content created by the CMS users, e.g. an article
+- JSON files generated by **scripts/prepareGeneratedContent.js**, describing content that derives from that CMS content
+
+An example of the latter is the JSON file that describes the content that will appear on the first page of the website's Mixes category section. For this page, we want to show the latest articles that contain an original mix in them. To achieve this, our script essentially reads through all the JSON files that describe articles, filters for the ones that have their "category" value set to "MIXES", and then selects only the latest of those articles. It then generates a new JSON file that contains the content of all those latest articles.
+
+The generated data for the production site resides in the folder **public/cms-content/generated**, while for development it resides in the folder **public/cms-dev-content/generated**.
+
+

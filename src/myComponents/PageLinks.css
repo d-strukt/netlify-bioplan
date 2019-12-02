@@ -1,0 +1,22 @@
+.tng-PageLinks {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  max-width: 780px;
+  padding: 20px 15px;
+}
+
+.tng-PageLinks-link {
+  color: var(--color-green-28);
+  font-size: 18px;
+  font-weight: bold;
+  text-align: right;
+  text-decoration: none;
+}
+
+@media (min-width: 991px) {
+  /* Increase the max-width to line-up with articles columns above it */
+  .tng-PageLinks {
+    max-width: 960px;
+  }
+}
