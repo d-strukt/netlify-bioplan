@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Component } from 'react'
 
 
 const encode = (data) => {
@@ -8,7 +8,8 @@ const encode = (data) => {
  }
 
 
-class ContactForm extends React.Component {
+class ContactForm extends Component {
+
    constructor(props) {
      super(props);
      this.state = { name: "", email: "", message: "" };
