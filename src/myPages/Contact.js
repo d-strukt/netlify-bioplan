@@ -42,7 +42,7 @@ const Contact = ({ navSlideClass, previewData }) => (
               <MarkdownRenderer md={data.body || ''} />
             </main>
           </div>
-          <ContactForm/>
+          <ContactForm></ContactForm>
         }
       />
     </section>
