@@ -16,7 +16,7 @@ export default {
     {
       name: 'articles',
       label: 'Articles',
-      description: 'An article about music',
+      description: 'Company News',
       folder: `public/${saveFolder}/articles`,
       slug: '{{year}}{{month}}{{day}}_{{slug}}',
       create: true,
@@ -65,13 +65,13 @@ export default {
     {
       name: 'pages',
       label: 'Pages',
-      description: 'Edit website pages',
+      description: 'Edit Pages',
       delete: false,
       format: 'json',
       files: [
         {
           name: 'home',
-          label: 'Home',
+          label: 'Home / Start page with product overview',
           file: `public/${saveFolder}/pages/home.json`,
           fields: [
             {
@@ -88,7 +88,7 @@ export default {
         },
         {
           name: 'what',
-          label: 'What',
+          label: 'What / What do we do',
           file: `public/${saveFolder}/pages/what.json`,
           fields: [
             {
@@ -105,7 +105,7 @@ export default {
         },
         {
           name: 'why',
-          label: 'Why',
+          label: 'Why / Why we do it',
           file: `public/${saveFolder}/pages/why.json`,
           fields: [
             {
@@ -122,7 +122,7 @@ export default {
         },
         {
           name: 'how',
-          label: 'How',
+          label: 'How / How we do it',
           file: `public/${saveFolder}/pages/how.json`,
           fields: [
             {
@@ -139,7 +139,7 @@ export default {
         },
         {
           name: 'who',
-          label: 'Who',
+          label: 'Who / Team introduction',
           file: `public/${saveFolder}/pages/who.json`,
           fields: [
             {
@@ -156,8 +156,25 @@ export default {
         },
         {
           name: 'timeline',
-          label: 'Timeline',
+          label: 'Timeline / Company history',
           file: `public/${saveFolder}/pages/timeline.json`,
+          fields: [
+            {
+              name: 'mainImage',
+              label: 'Main Image',
+              widget: 'image'
+            },
+            {
+              name: 'body',
+              label: 'Body',
+              widget: 'markdown'
+            }
+          ]
+        },
+        {
+          name: 'contact',
+          label: 'Contact / Contact Us',
+          file: `public/${saveFolder}/pages/contact.json`,
           fields: [
             {
               name: 'mainImage',
