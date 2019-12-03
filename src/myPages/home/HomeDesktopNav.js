@@ -18,6 +18,9 @@ const HomeDesktopNav = () => (
       <li>
         <a href='/about' className='tng-HomeDesktopNav-link'>About</a>
       </li>
+      <li>
+        <a href='/contact' className='tng-HomeDesktopNav-link'>Contact</a>
+      </li>
     </ul>
   </nav>
 )

@@ -1,5 +1,5 @@
 /**
-  * The Next Groove
+  * Bioplan.ai
   * Our routes and global CSS is set here
   */
 import React from 'react'
@@ -17,12 +17,14 @@ const Admin = Importer(() => import('myPages/Admin'))
 const Article = Importer(() => import('myPages/Article'))
 const Category = Importer(() => import('myPages/Category'))
 const Home = Importer(() => import('myPages/Home'))
+const Contact = Importer(() => import('myPages/Contact'))
 
 const App = () => (
   <BrowserRouter>
-    <Titled title={() => 'The Next Groove'}>
+    <Titled title={() => 'Bioplan'}>
       <Switch>
         <Route exact path='/' component={Home} />
+        <Route path='/contact' component={Contact} />
         <Route path='/about' component={About} />
         <Route path='/admin' component={Admin} />
         <Route path='/article/:articlePath' component={Article} />
