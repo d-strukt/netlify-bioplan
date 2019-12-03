@@ -1,12 +1,10 @@
 import React, { Component } from 'react'
 
-
 const encode = (data) => {
    return Object.keys(data)
        .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
        .join("&");
  }
-
 
 class ContactForm extends Component {
 
@@ -16,7 +14,6 @@ class ContactForm extends Component {
    }
 
    /* Here’s the juicy bit for posting the form submission */
-
    handleSubmit = e => {
      fetch("/", {
        method: "POST",
