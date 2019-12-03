@@ -15,7 +15,7 @@ export default {
   collections: [
     {
       name: 'articles',
-      label: 'Article',
+      label: 'Articles',
       description: 'An article about music',
       folder: `public/${saveFolder}/articles`,
       slug: '{{year}}{{month}}{{day}}_{{slug}}',
@@ -64,31 +64,14 @@ export default {
     },
     {
       name: 'pages',
-      label: 'Page',
-      description: 'The unique pages',
+      label: 'Pages',
+      description: 'Edit website pages',
       delete: false,
       format: 'json',
       files: [
         {
-          name: 'about',
-          label: 'About Page',
-          file: `public/${saveFolder}/pages/about.json`,
-          fields: [
-            {
-              name: 'mainImage',
-              label: 'Main Image',
-              widget: 'image'
-            },
-            {
-              name: 'body',
-              label: 'Body',
-              widget: 'markdown'
-            }
-          ]
-        },
-        {
           name: 'home',
-          label: 'home Page',
+          label: 'Home',
           file: `public/${saveFolder}/pages/home.json`,
           fields: [
             {
@@ -105,7 +88,7 @@ export default {
         },
         {
           name: 'what',
-          label: 'what Page',
+          label: 'What',
           file: `public/${saveFolder}/pages/what.json`,
           fields: [
             {
@@ -121,9 +104,77 @@ export default {
           ]
         },
         {
+          name: 'why',
+          label: 'Why',
+          file: `public/${saveFolder}/pages/why.json`,
+          fields: [
+            {
+              name: 'mainImage',
+              label: 'Main Image',
+              widget: 'image'
+            },
+            {
+              name: 'body',
+              label: 'Body',
+              widget: 'markdown'
+            }
+          ]
+        },
+        {
+          name: 'how',
+          label: 'How',
+          file: `public/${saveFolder}/pages/how.json`,
+          fields: [
+            {
+              name: 'mainImage',
+              label: 'Main Image',
+              widget: 'image'
+            },
+            {
+              name: 'body',
+              label: 'Body',
+              widget: 'markdown'
+            }
+          ]
+        },
+        {
           name: 'who',
-          label: 'who Page',
+          label: 'Who',
           file: `public/${saveFolder}/pages/who.json`,
+          fields: [
+            {
+              name: 'mainImage',
+              label: 'Main Image',
+              widget: 'image'
+            },
+            {
+              name: 'body',
+              label: 'Body',
+              widget: 'markdown'
+            }
+          ]
+        },
+        {
+          name: 'timeline',
+          label: 'Timeline',
+          file: `public/${saveFolder}/pages/timeline.json`,
+          fields: [
+            {
+              name: 'mainImage',
+              label: 'Main Image',
+              widget: 'image'
+            },
+            {
+              name: 'body',
+              label: 'Body',
+              widget: 'markdown'
+            }
+          ]
+        },
+        {
+          name: 'about',
+          label: 'About Page',
+          file: `public/${saveFolder}/pages/about.json`,
           fields: [
             {
               name: 'mainImage',
