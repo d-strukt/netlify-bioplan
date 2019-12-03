@@ -1,17 +1,14 @@
 /** The About page, explaining the site */
 import React from 'react'
 import { Titled } from 'react-titled'
+import NetlifyForm from 'react-netlify-form'
 
 import CMSItemLoader from 'myComponents/CMSItemLoader'
 import MarkdownRenderer from 'myComponents/MarkdownRenderer'
 import MenuWrapper from 'myComponents/MenuWrapper'
 import WideLogo from 'myComponents/WideLogo'
-import ContactForm from 'myComponents/ContactForm'
 
 import './Contact.css'
-
-
-
 
 /**
  * Render all content wrapped by menus/navigation.
@@ -41,8 +38,29 @@ const Contact = ({ navSlideClass, previewData }) => (
             <main className='tng-About-text'>
               <MarkdownRenderer md={data.body || ''} />
             </main>
+            <NetlifyForm name='Contact Form'>
+              {({ loading, error, success }) => (
+                <div>
+                  {loading &&
+                    <div>Loading...</div>
+                  }
+                  {error &&
+                    <div>Your information was not sent. Please try again later.</div>
+                  }
+                  {success &&
+                    <div>Thank you for contacting us!</div>
+                  }
+                  {!loading && !success &&
+                    <div>
+                      <input type='text' name='Name' required />
+                      <textarea name='Message' required />
+                      <button>Submit</button>
+                    </div>
+                  }
+                </div>
+              )}
+            </NetlifyForm>
           </div>
-          <ContactForm></ContactForm>
         }
       />
     </section>
