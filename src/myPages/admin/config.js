@@ -85,6 +85,57 @@ export default {
               widget: 'markdown'
             }
           ]
+        },
+        {
+          name: 'home',
+          label: 'home Page',
+          file: `public/${saveFolder}/pages/home.json`,
+          fields: [
+            {
+              name: 'mainImage',
+              label: 'Main Image',
+              widget: 'image'
+            },
+            {
+              name: 'body',
+              label: 'Body',
+              widget: 'markdown'
+            }
+          ]
+        },
+        {
+          name: 'what',
+          label: 'what Page',
+          file: `public/${saveFolder}/pages/what.json`,
+          fields: [
+            {
+              name: 'mainImage',
+              label: 'Main Image',
+              widget: 'image'
+            },
+            {
+              name: 'body',
+              label: 'Body',
+              widget: 'markdown'
+            }
+          ]
+        },
+        {
+          name: 'who',
+          label: 'who Page',
+          file: `public/${saveFolder}/pages/who.json`,
+          fields: [
+            {
+              name: 'mainImage',
+              label: 'Main Image',
+              widget: 'image'
+            },
+            {
+              name: 'body',
+              label: 'Body',
+              widget: 'markdown'
+            }
+          ]
         }
       ]
     }
