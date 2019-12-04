@@ -10,6 +10,8 @@ export default {
   },
   media_folder: `public/${saveFolder}/uploads`,
   public_folder: `${saveFolder}/uploads`,
+  publish_mode: 'editorial_workflow',
+
 
   /* Collections */
   collections: [
