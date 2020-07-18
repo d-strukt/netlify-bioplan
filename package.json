@@ -11,7 +11,7 @@
     "gsap": "^3.0.1",
     "immutable": "^3.8.2",
     "locomotive-scroll": "^3.2.6",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.19",
     "markdown-to-jsx": "^6.10.2",
     "moment": "^2.24.0",
     "netlify-cms": "^2.9.7",
